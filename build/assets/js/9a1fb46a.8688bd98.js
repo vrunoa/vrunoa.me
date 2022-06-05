@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkvrunoa=self.webpackChunkvrunoa||[]).push([[60],{2012:function(a){a.exports=JSON.parse('{"label":"appium","permalink":"/blog/tags/appium","allTagsPath":"/blog/tags","count":1}')}}]);

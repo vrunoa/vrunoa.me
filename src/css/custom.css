@@ -28,3 +28,15 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+.vrunoa-header {
+    display:block;
+    min-height: 150px;
+}
+
+.vrunoa-background {
+    background-image: url('../../static/img/me-top.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}

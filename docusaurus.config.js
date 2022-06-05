@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'vrunoa',
-  tagline: 'Dinosaurs are cool',
+  tagline: 'Dinosaurs are cool(I agree with docusaurus)',
   url: 'https://github.com/vrunoa/vrunoa.me',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -60,41 +60,26 @@ const config = {
         title: 'vrunoa',
         logo: {
           alt: 'Bruno Alassia',
-          src: 'img/logo.svg',
+          src: 'img/me.jpeg',
         },
         items: [
-          {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Tutorial',
-          },
           {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            href: 'https://github.com/vrunoa/vrunoa.me',
-            label: 'GitHub',
-            position: 'right',
-          },
         ],
       },
       footer: {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Open source',
             items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
             ],
           },
           {
             title: 'Community',
             items: [
               {
-                label: 'Linkedin',
-                href: 'https://www.linkedin.com/in/vrunoa',
+                label: 'GitHub',
+                href: 'https://github.com/vrunoa',
               },
               {
                 label: 'Twitter',
@@ -114,8 +99,8 @@ const config = {
                 to: '/blog',
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/vrunoa',
+                label: 'Linkedin',
+                href: 'https://www.linkedin.com/in/vrunoa',
               },
             ],
           },

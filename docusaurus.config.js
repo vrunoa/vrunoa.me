@@ -8,8 +8,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'vrunoa',
   tagline: 'Dinosaurs are cool(I agree with docusaurus)',
-  url: 'https://vrunoa.github.io/',
-  baseUrl: '/vrunoa.me/',
+  url: 'https://vrunoa.me/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 

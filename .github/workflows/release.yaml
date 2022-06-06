@@ -40,5 +40,6 @@ jobs:
         run: |
           git fetch
           git checkout gh-pages
+          ls -la
           tar xvfz build.tar.gz -C ./
           git status

@@ -67,4 +67,4 @@ jobs:
       - name: Update page
         run: |
           git status
-          git ci -am "updating page"
+          git commit -am "updating page"

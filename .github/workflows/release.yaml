@@ -12,7 +12,7 @@ env:
   GH_TOKEN: ${{secrets.GH_TOKEN}}
 
 jobs:
-  release:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -34,12 +34,31 @@ jobs:
           pushd build
           tar -cvf build.tar.gz ./*
           popd
-          npm run clear
 
-      - name: Update gh-pages
+      - name: Upload tarball
+        uses: actions/upload-artifact@v2
+        with:
+          name: buildtarball
+          path: |
+            ./build/build.tar.gz
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Checkout gh-pages
         run: |
           git fetch
           git checkout gh-pages
+
+      - name: Download saucectl binary
+        uses: actions/download-artifact@v2
+        with:
+          name: buildtarball
+
+      - name: Extract build
+        run: |
           ls -la
-          tar xvfz build.tar.gz -C ./
-          git status

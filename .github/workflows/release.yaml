@@ -60,5 +60,8 @@ jobs:
           name: buildtarball
 
       - name: Extract build
+        run: tar xvfz build.tar.gz -C ./
+
+      - name: Update page
         run: |
-          ls -la
+          git status

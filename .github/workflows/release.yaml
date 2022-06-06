@@ -69,4 +69,5 @@ jobs:
           git status
           git config --global user.email "vruno.alassia@gmail.com"
           git config --global user.name "vrunoa"
+          git add assets/*
           git commit -am "updating page"

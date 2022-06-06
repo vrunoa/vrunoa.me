@@ -38,6 +38,7 @@ jobs:
 
       - name: Update gh-pages
         run: |
+          git fetch
           git checkout gh-pages
           tar xvfz build.tar.gz -C ./
           git status

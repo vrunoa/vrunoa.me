@@ -31,6 +31,13 @@ jobs:
 
       - name: Create tarball
         run: |
-          cd build
+          push build
           tar -cvf build.tar.gz ./*
+          popd
           npm run clear
+
+      - name: Update gh-pages
+        run: |
+          git checkout gh-pages
+          tar xvfz build.tar.gz -C ./
+          git status

@@ -1,0 +1,71 @@
+name: vrunoa.me
+
+on:
+  push:
+    tags:
+      - v*
+
+env:
+  GH_TOKEN: ${{secrets.GH_TOKEN}}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node version
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run clear && npm run build
+
+      - name: Create tarball
+        run: |
+          pushd build
+          tar -cvf build.tar.gz ./*
+          popd
+
+      - name: Upload tarball
+        uses: actions/upload-artifact@v2
+        with:
+          name: buildtarball
+          path: |
+            ./build/build.tar.gz
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Checkout gh-pages
+        run: |
+          git fetch
+          git checkout gh-pages
+
+      - name: Download saucectl binary
+        uses: actions/download-artifact@v2
+        with:
+          name: buildtarball
+
+      - name: Extract build
+        run: | 
+          tar xvf build.tar.gz -C ./
+          rm -rf build.tar.gz
+
+      - name: Update page
+        run: |
+          git status
+          git config --global user.email "vruno.alassia@gmail.com"
+          git config --global user.name "vrunoa"
+          git add assets/*
+          git commit -am "updating page"
+          git push origin gh-pages

@@ -67,4 +67,6 @@ jobs:
       - name: Update page
         run: |
           git status
+          git config --global user.email "vruno.alassia@gmail.com"
+          git config --global user.name "vrunoa"
           git commit -am "updating page"

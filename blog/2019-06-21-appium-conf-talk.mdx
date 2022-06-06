@@ -1,0 +1,30 @@
+---
+slug: mdx-blog-post
+title: Go beyond the software...
+authors: [vrunoa]
+tags: [appium,android,emulator]
+---
+
+Go beyond the software, automate hardware scenarios on Android Emulators.
+
+On June 2019, I travelled to Bangalore to talk at AppiumConf 2019 on how to use Android Emulators features to test use cases scenarios where your applications may interact with the environment, like a user using his fingerprint, an incoming call or SMS received.
+
+Using light sensor feature I drive the talk on how to integrate missing features provided by the Android Emulator into Appium.
+
+```javascript
+it('uses light mode on high luminance', async () => {
+    await driver.lightSensor(40000);
+    let container = await driver.elementById("sensorContainer");
+    expect(await container.getAttribute('content-desc')).to.equal("#FFFFFF");
+    let textEl = await driver.elementById("sensorText");
+    expect(await textEl.getAttribute('content-desc')).to.equal("#000000");
+});
+```
+
+[Source code](https://github.com/vrunoa/appium-conf-2019)
+
+### slides
+<iframe src="https://slides.com/vrunoa/appium-conf-2019/embed" width="576" height="420" title="Go beyond the software, automate hardware scenarios on Android Emulators" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+### talk
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8Ph50Sm3Cdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

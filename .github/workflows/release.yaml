@@ -71,3 +71,4 @@ jobs:
           git config --global user.name "vrunoa"
           git add assets/*
           git commit -am "updating page"
+          git push origin gh-pages

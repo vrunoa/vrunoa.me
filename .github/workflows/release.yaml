@@ -32,7 +32,7 @@ jobs:
       - name: Create tarball
         run: |
           pushd build
-          tar -cvf build.tar.gz ./*
+          tar -cvfz build.tar.gz ./*
           popd
 
       - name: Upload tarball
@@ -60,7 +60,7 @@ jobs:
           name: buildtarball
 
       - name: Extract build
-        run: tar xvfz build.tar.gz -C ./
+        run: tar xvf build.tar.gz -C ./
 
       - name: Update page
         run: |

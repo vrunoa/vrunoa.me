@@ -1,6 +1,6 @@
-# vrunoa.me
+# [vrunoa.me](vrunoa.me)
 
-Personal website build with [docusaurus](https://docusaurus.io/)
+Personal website built with [docusaurus](https://docusaurus.io/)
 
 ## development
 

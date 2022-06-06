@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkvrunoa=self.webpackChunkvrunoa||[]).push([[825],{4274:function(a){a.exports=JSON.parse('{"label":"android","permalink":"/blog/tags/android","allTagsPath":"/blog/tags","count":1}')}}]);

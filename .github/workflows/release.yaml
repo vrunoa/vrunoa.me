@@ -67,5 +67,6 @@ jobs:
           git config --global user.email "vruno.alassia@gmail.com"
           git config --global user.name "vrunoa"
           git add assets/*
+          git add blog/*
           git commit -am "updating page"
           git push origin gh-pages
